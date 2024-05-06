@@ -14,12 +14,12 @@ ArrList::~ArrList()
 }
 
 
-//Metoda do dodania nowego elementu o okreúlonym priorytecie
+//Metoda do dodania nowego elementu o okre≈õlonym priorytecie
 void ArrList::insert(int data, int priority)
 {
 	if (size == capacity)
 	{
-		cout << "Kolejka jest pe≥na" << endl;
+		cout << "Kolejka jest pe≈Çna" << endl;
 		return;
 	}
 
@@ -29,15 +29,15 @@ void ArrList::insert(int data, int priority)
 	array[index].priority = priority;
 
 
-	//Naprawa kolejnoúci po wstawieniu
-	while (index > 0 and array[index].priority > array[(index - 1) / 2].priority)
+	//Naprawa kolejno≈õci po wstawieniu
+	while (index > 0 and array[index].priority > array[index - 1].priority)
 	{
-		swap(array[index], array[(index - 1) / 2]);
-		index = (index - 1) / 2;
+		swap(array[index], array[index - 1]);
+		index--;
 	}
 }
 
-//Metoda do usuwania i zwracania elementu o najwyøszym priorytecie
+//Metoda do usuwania i zwracania elementu o najwy≈ºszym priorytecie
 int ArrList::extractMax()
 {
 	if (size == 0) {
@@ -47,7 +47,7 @@ int ArrList::extractMax()
 
 	int maxData = array[0].data;
 
-	// Przesuwanie tablicy w dÛ≥
+	// Przesuwanie tablicy w d√≥≈Ç
 	for (int i = 1; i < size; i++) {
 		array[i - 1].data = array[i].data;
 	}
@@ -57,7 +57,7 @@ int ArrList::extractMax()
 }
 
 
-//Metoda do zwracania elementu o najwiÍkszym priorytecie
+//Metoda do zwracania elementu o najwiƒôkszym priorytecie
 int ArrList::peek() const
 {
 	if (size == 0)
@@ -76,7 +76,7 @@ void ArrList::modifyKey(int data, int newPriority) {
 			int oldPriority = array[i].priority;
 			array[i].priority = newPriority;
 
-			// Naprawa kolejnoúci w kolejce po zmianie priorytetu
+			// Naprawa kolejno≈õci w kolejce po zmianie priorytetu
 			if (newPriority > oldPriority) {
 				int index = i;
 				while (index > 0 && array[index].priority > array[(index - 1) / 2].priority) {
@@ -97,7 +97,7 @@ void ArrList::modifyKey(int data, int newPriority) {
 	cout << "Nie znaleziono podanej wartosci." << endl;
 }
 
-//Metoda zwracajπca wielkoúÊ kolejki
+//Metoda zwracajƒÖca wielko≈õƒá kolejki
 int ArrList::getSize()
 {
 	return size;
