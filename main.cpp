@@ -73,7 +73,7 @@ void run() {
                     }
             
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
             
@@ -87,7 +87,7 @@ void run() {
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 3: {
@@ -100,7 +100,7 @@ void run() {
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 4: {
@@ -119,7 +119,7 @@ void run() {
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 5: {
@@ -132,7 +132,7 @@ void run() {
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 6: {
@@ -185,7 +185,7 @@ void run() {
                     }
             
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
             
@@ -199,7 +199,7 @@ void run() {
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 3: {
@@ -212,7 +212,7 @@ void run() {
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 4: {
@@ -231,7 +231,7 @@ void run() {
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 5: {
@@ -244,7 +244,7 @@ void run() {
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
+                    cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 6: {
