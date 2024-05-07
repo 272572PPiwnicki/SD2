@@ -1,18 +1,16 @@
 #include "Heap.hpp"
 #include <iostream>
+#include <random>
 using namespace std;
 
-// Konstruktor klasy Heap
 Heap::Heap(int capacity) : capacity(capacity), size(0) {
     heapArray = new Node[capacity];
 }
 
-// Destruktor klasy Heap
 Heap::~Heap() {
     delete[] heapArray;
 }
 
-// Metoda do wstawiania nowego elementu do kopca
 void Heap::insert(int data, int priority) {
     if (size == capacity) {
         cout << "Kopiec jest pełny" << endl;
@@ -26,7 +24,6 @@ void Heap::insert(int data, int priority) {
     heapifyUp(index);
 }
 
-// Metoda pomocnicza do naprawiania kopca w górę (w kierunku korzenia)
 void Heap::heapifyUp(int index) {
     while (index > 0 && heapArray[index].priority > heapArray[(index - 1) / 2].priority) {
         swap(heapArray[index], heapArray[(index - 1) / 2]);
@@ -34,7 +31,6 @@ void Heap::heapifyUp(int index) {
     }
 }
 
-// Metoda do usuwania i zwracania elementu o największym priorytecie
 int Heap::extractMax() {
     if (size == 0) {
         cout << "Kopiec jest pusty" << endl;
@@ -49,7 +45,6 @@ int Heap::extractMax() {
     return maxData;
 }
 
-// Metoda pomocnicza do naprawiania kopca w dół (w kierunku liści)
 void Heap::heapifyDown(int index) {
     int leftChild = 2 * index + 1;
     int rightChild = 2 * index + 2;
@@ -69,8 +64,7 @@ void Heap::heapifyDown(int index) {
     }
 }
 
-// Metoda do zwracania elementu o najwyższym priorytecie
-int Heap::peek() const {
+int Heap::peek() {
     if (size == 0) {
         cout << "Kopiec jest pusty" << endl;
         exit(1);
@@ -79,7 +73,6 @@ int Heap::peek() const {
     return heapArray[0].data;
 }
 
-// Metoda do zmiany priorytetu elementu w kopcu
 void Heap::modifyKey(int data, int newPriority) {
     for (int i = 0; i < size; i++) {
         if (heapArray[i].data == data) {
@@ -95,10 +88,20 @@ void Heap::modifyKey(int data, int newPriority) {
             return;
         }
     }
-    cout << "Nie znaleziono podanej wartości." << endl;
+    cout << "Nie znaleziono podanej wartosci." << endl;
 }
 
-// Metoda zwracająca aktualny rozmiar kopca
 int Heap::getSize() {
     return size;
+}
+
+void Heap::generateRandomNumbers(int count) {
+    mt19937 rng(time(nullptr));
+    uniform_int_distribution<int> distribution(1, 100); // Zakres priorytetów
+
+    for (int i = 0; i < count; ++i) {
+        int data = rng() % 1000000 + 1; // Generowanie losowej liczby z zakresu 1-1000000
+        int priority = distribution(rng); // Losowy priorytet z zakresu 1-100
+        insert(data, priority); // Wstawienie danych do kopca (wywołanie metody insert klasy Heap)
+    }
 }
