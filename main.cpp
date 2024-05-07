@@ -43,7 +43,7 @@ void run() {
         case 1: {
             Structure* wsk = &pq; // Utworzenie wskaznika do klasy ArrList
             int choice1 = 0;
-            while (choice1 != 7) {
+            while (choice1 != 6) {
                 cout << "1. Dodaj element e o priorytecie p" << endl;
                 cout << "2. Usuniecie i zwrocenie elementu o najwiekszym priorytecie" << endl;
                 cout << "3. Zwrocenie (podejrzenie) elementu o najwiekszym priorytecie" << endl;
@@ -59,52 +59,80 @@ void run() {
                     system("cls");
                     int data;
                     int priority;
+                    double totalElapsedTime = 0.0;
                     cout << "Podaj element: ";
                     cin >> data;
                     cout << "Podaj priorytet: ";
                     cin >> priority;
-                    timer.start();
-                    wsk->insert(data, priority);
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+            
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->insert(data, priority);
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+            
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
+            
                 case 2: {
                     system("cls");
-                    timer.start();
-                    wsk->extractMax();
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+                    double totalElapsedTime = 0.0;
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->extractMax();
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 3: {
                     system("cls");
-                    timer.start();
-                    //wsk->peek();
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+                    double totalElapsedTime = 0.0;
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->peek();
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 4: {
                     system("cls");
                     int data;
                     int newPriority;
+                    double totalElapsedTime = 0.0;
                     cout << "Podaj element: ";
                     cin >> data;
                     cout << "Podaj nowy priorytet: ";
                     cin >> newPriority;
-                    timer.start();
-                    wsk->modifyKey(data, newPriority);
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->modifyKey(data, newPriority);
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 5: {
                     system("cls");
-                    timer.start();
-                    wsk->getSize();
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+                    double totalElapsedTime = 0.0;
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->getSize();
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 6: {
@@ -127,7 +155,7 @@ void run() {
             Heap heap(1000000); // Utworzenie instancji klasy Heap o pojemności 1000000
             Structure* wsk = &heap; // Utworzenie wskaźnika do klasy Heap
             int choice1 = 0;
-            while (choice1 != 7) {
+            while (choice1 != 6) {
                 cout << "1. Dodaj element e o priorytecie p" << endl;
                 cout << "2. Usuniecie i zwrocenie elementu o najwiekszym priorytecie" << endl;
                 cout << "3. Zwrocenie (podejrzenie) elementu o najwiekszym priorytecie" << endl;
@@ -138,57 +166,85 @@ void run() {
 
                 cin >> choice1;
 
-                switch (choice1) {
+               switch (choice1) {
                 case 1: {
                     system("cls");
                     int data;
                     int priority;
+                    double totalElapsedTime = 0.0;
                     cout << "Podaj element: ";
                     cin >> data;
                     cout << "Podaj priorytet: ";
                     cin >> priority;
-                    timer.start();
-                    wsk->insert(data, priority);
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+            
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->insert(data, priority);
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+            
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
+            
                 case 2: {
                     system("cls");
-                    timer.start();
-                    wsk->extractMax();
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+                    double totalElapsedTime = 0.0;
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->extractMax();
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 3: {
                     system("cls");
-                    timer.start();
-                    wsk->peek();
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+                    double totalElapsedTime = 0.0;
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->peek();
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 4: {
                     system("cls");
                     int data;
                     int newPriority;
+                    double totalElapsedTime = 0.0;
                     cout << "Podaj element: ";
                     cin >> data;
                     cout << "Podaj nowy priorytet: ";
                     cin >> newPriority;
-                    timer.start();
-                    wsk->modifyKey(data, newPriority);
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->modifyKey(data, newPriority);
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 5: {
                     system("cls");
-                    timer.start();
-                    wsk->getSize();
-                    timer.stop();
-                    cout << "Czas wykonania operacji: " << timer.elapsed_milliseconds() << " ms" << endl;
+                    double totalElapsedTime = 0.0;
+                    for (int i = 0; i < 100; ++i) {
+                        timer.start();
+                        wsk->getSize();
+                        timer.stop();
+                        totalElapsedTime += timer.elapsed_milliseconds();
+                    }
+                    double averageTime = totalElapsedTime / 100.0;
+                    cout << "Średni czas wykonania operacji: " << averageTime << " ms" << endl;
                     break;
                 }
                 case 6: {
