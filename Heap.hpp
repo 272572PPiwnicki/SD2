@@ -1,21 +1,23 @@
 #pragma once
+#include "Structure.hpp"
 #include "Node.hpp"
 
-class Heap {
+class Heap : public Structure {
 private:
-    Node* heapArray; // Tablica przechowująca kopiec
-    int capacity; // Pojemność kopca
-    int size; // Aktualny rozmiar kopca
+    Node* heapArray;
+    int capacity;
+    int size;
 
 public:
     Heap(int capacity);
     ~Heap();
 
-    void insert(int data, int priority);
-    int extractMax();
-    int peek() const;
-    void modifyKey(int data, int newPriority);
-    int getSize();
+    void insert(int data, int priority) override;
+    int extractMax() override;
+    int peek() override;
+    void modifyKey(int data, int newPriority) override;
+    int getSize() override;
+    void generateRandomNumbers(int count) override; // Dodana implementacja tej funkcji, zgodnie z interfejsem Structure
 
 private:
     void heapifyUp(int index);
