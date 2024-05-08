@@ -15,6 +15,30 @@ ArrList::~ArrList()
 	delete[] array;
 }
 
+ArrList::ArrList(const ArrList& other) : capacity(other.capacity), size(other.size) {
+	array = new Node[capacity];
+	for (int i = 0; i < size; ++i) {
+		array[i].data = other.array[i].data;
+		array[i].priority = other.array[i].priority;
+	}
+}
+
+ArrList& ArrList::operator=(const ArrList& other) {
+	if (this != &other) {
+		delete[] array;
+
+		capacity = other.capacity;
+		size = other.size;
+
+		array = new Node[capacity];
+		for (int i = 0; i < size; ++i) {
+			array[i].data = other.array[i].data;
+			array[i].priority = other.array[i].priority;
+		}
+	}
+	return *this;
+}
+
 
 //Metoda do dodania nowego elementu o okreslonym priorytecie
 void ArrList::insert(int data, int priority)
