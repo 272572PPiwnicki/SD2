@@ -9,8 +9,11 @@ private:
     int size;
 
 public:
-    Heap(int capacity);
+    Heap(int capacity= 1000000);
+    Heap(const Heap& other); // Konstruktor kopiujący
     ~Heap();
+
+    Heap& operator=(const Heap& other); // Operator przypisania
 
     void insert(int data, int priority) override;
     int extractMax() override;
