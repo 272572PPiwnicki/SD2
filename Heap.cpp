@@ -7,8 +7,30 @@ Heap::Heap(int capacity) : capacity(capacity), size(0) {
     heapArray = new Node[capacity];
 }
 
+Heap::Heap(const Heap& other) : capacity(other.capacity), size(other.size) {
+    heapArray = new Node[capacity];
+    for (int i = 0; i < size; ++i) {
+        heapArray[i] = other.heapArray[i];
+    }
+}
+
 Heap::~Heap() {
     delete[] heapArray;
+}
+
+Heap& Heap::operator=(const Heap& other) {
+    if (this != &other) {
+        delete[] heapArray;
+
+        capacity = other.capacity;
+        size = other.size;
+
+        heapArray = new Node[capacity];
+        for (int i = 0; i < size; ++i) {
+            heapArray[i] = other.heapArray[i];
+        }
+    }
+    return *this;
 }
 
 void Heap::insert(int data, int priority) {
