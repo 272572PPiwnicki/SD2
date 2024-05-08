@@ -14,7 +14,9 @@ private:
 
 public:
     ArrList(int capacity);
+    ArrList(const ArrList& other); // Konstruktor kopiujący
     ~ArrList();
+    ArrList& operator=(const ArrList& other); // Operator przypisania
 
     void insert(int data, int priority);
     int extractMax();
