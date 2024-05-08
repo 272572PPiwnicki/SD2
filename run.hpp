@@ -6,6 +6,7 @@
 #include <cstdlib>
 
 void run() {
+    
     ArrList pq(1000000); // Utworzenie instancji klasy ArrList o pojemnosci 1000000
 
     Timer timer;
@@ -45,9 +46,12 @@ void run() {
                     cin >> priority;
 
                     for (int i = 0; i < 100; ++i) {
+                        ArrList pqCopy = pq; // Tworzenie kopii pq
+                        Structure* wsk = &pqCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->insert(data, priority);
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
 
@@ -60,9 +64,12 @@ void run() {
                     system("cls");
                     double totalElapsedTime = 0.0;
                     for (int i = 0; i < 100; ++i) {
+                        ArrList pqCopy = pq; // Tworzenie kopii pq
+                        Structure* wsk = &pqCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->extractMax();
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
@@ -73,9 +80,12 @@ void run() {
                     system("cls");
                     double totalElapsedTime = 0.0;
                     for (int i = 0; i < 100; ++i) {
+                        ArrList pqCopy = pq; // Tworzenie kopii pq
+                        Structure* wsk = &pqCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->peek();
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
@@ -84,6 +94,7 @@ void run() {
                 }
                 case 4: {
                     system("cls");
+                    
                     int data;
                     int newPriority;
                     double totalElapsedTime = 0.0;
@@ -92,9 +103,12 @@ void run() {
                     cout << "Podaj nowy priorytet: ";
                     cin >> newPriority;
                     for (int i = 0; i < 100; ++i) {
+                        ArrList pqCopy = pq; // Tworzenie kopii pq
+                        Structure* wsk = &pqCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->modifyKey(data, newPriority);
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
@@ -105,9 +119,12 @@ void run() {
                     system("cls");
                     double totalElapsedTime = 0.0;
                     for (int i = 0; i < 100; ++i) {
+                        ArrList pqCopy = pq; // Tworzenie kopii pq
+                        Structure* wsk = &pqCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->getSize();
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
@@ -148,6 +165,7 @@ void run() {
                 switch (choice1) {
                 case 1: {
                     system("cls");
+
                     int data;
                     int priority;
                     double totalElapsedTime = 0.0;
@@ -157,9 +175,12 @@ void run() {
                     cin >> priority;
 
                     for (int i = 0; i < 100; ++i) {
+                        Heap heapCopy = heap; // Tworzenie kopii pq
+                        Structure* wsk = &heapCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->insert(data, priority);
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
 
@@ -172,9 +193,12 @@ void run() {
                     system("cls");
                     double totalElapsedTime = 0.0;
                     for (int i = 0; i < 100; ++i) {
+                        Heap heapCopy = heap; // Tworzenie kopii pq
+                        Structure* wsk = &heapCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->extractMax();
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
@@ -185,9 +209,12 @@ void run() {
                     system("cls");
                     double totalElapsedTime = 0.0;
                     for (int i = 0; i < 100; ++i) {
+                        Heap heapCopy = heap; // Tworzenie kopii pq
+                        Structure* wsk = &heapCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->peek();
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
@@ -204,9 +231,12 @@ void run() {
                     cout << "Podaj nowy priorytet: ";
                     cin >> newPriority;
                     for (int i = 0; i < 100; ++i) {
+                        Heap heapCopy = heap; // Tworzenie kopii pq
+                        Structure* wsk = &heapCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->modifyKey(data, newPriority);
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
@@ -217,9 +247,12 @@ void run() {
                     system("cls");
                     double totalElapsedTime = 0.0;
                     for (int i = 0; i < 100; ++i) {
+                        Heap heapCopy = heap; // Tworzenie kopii pq
+                        Structure* wsk = &heapCopy; // Ustawienie wskaźnika na kopię
                         timer.start();
                         wsk->getSize();
                         timer.stop();
+                        cout << i << ". " << wsk->getSize() << endl;
                         totalElapsedTime += timer.elapsed_milliseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
